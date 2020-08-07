@@ -22,17 +22,21 @@ let gripArr = {
 	name: ["grip1", "grip2", "grip3"],
 	img: ["zdj/grip/1.png", "zdj/grip/2.png", "zdj/grip/3.png"]
 }
-function createDeckElement() {
-	const deckPanel = document.querySelector('.selectDeck');
-	decksArr.img.map((deck, index) => {
-		const createDeck = document.createElement('img')
-		createDeck.src = deck;
-		createDeck.classList.add("deskSelect");
-		createDeck.dataset.deck = index + 1;
-		deckPanel.appendChild(createDeck)
+const createDeckElement = (arr, select, nameSelect) => {
+	const  panel = document.querySelector(select);
+	arr.img.map((item, index) => {
+		const createElement = document.createElement('img')
+		createElement.src = item;
+		createElement.classList.add(nameSelect);
+		createElement.dataset.deck = index + 1;
+		panel.appendChild(createElement)
 	})
 }
-createDeckElement();
+createDeckElement(decksArr, '.selectDeck', "deskSelect");
+createDeckElement(trucksArr, '.selectTruck', "truckSelect");
+createDeckElement(wheelsArr, '.selectWheels', "wheelsSelect");
+createDeckElement(gripArr, '.selectGrip', "gripSelect");
+
 //Download desk elements
 const deckBtn = [...document.querySelectorAll('.selectDeck .deskSelect')];
 const truckBtn = [...document.querySelectorAll('.selectTruck .truckSelect')];
@@ -41,6 +45,8 @@ const gripsBtn = [...document.querySelectorAll('.selectGrip .gripSelect')];
 
 const selectDeck = function () {
 	let deckValue = this.dataset.deck;
+	console.log(this.dataset.deck);
+	
 	deckImg = `${deckValue}.png`;
 	deck.src = "zdj/blat/" + deckImg;
 }
@@ -60,8 +66,9 @@ const selectGrip = function () {
 	grip.src = "zdj/grip/" + gripImg;
 }
 
-deckBtn.forEach(button=> {
-	button.addEventListener('click', selectDeck)
+deckBtn.forEach(button => {
+	const thies = this
+	button.addEventListener('click',selectDeck)
 })
 truckBtn.forEach(button => {
 	button.addEventListener('click', selectTruck)
