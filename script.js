@@ -22,13 +22,15 @@ let gripArr = {
 	name: ["grip1", "grip2", "grip3"],
 	img: ["zdj/grip/1.png", "zdj/grip/2.png", "zdj/grip/3.png"]
 }
+
 const createDeckElement = (arr, select, nameSelect) => {
 	const  panel = document.querySelector(select);
 	arr.img.map((item, index) => {
 		const createElement = document.createElement('img')
 		createElement.src = item;
 		createElement.classList.add(nameSelect);
-		createElement.dataset.deck = index + 1;
+		createElement.classList.add("selectProduct");
+		createElement.dataset.number = index + 1;
 		panel.appendChild(createElement)
 	})
 }
@@ -44,31 +46,28 @@ const wheelsBtn = [...document.querySelectorAll('.selectWheels .wheelsSelect')];
 const gripsBtn = [...document.querySelectorAll('.selectGrip .gripSelect')];
 
 const selectDeck = function () {
-	let deckValue = this.dataset.deck;
-	console.log(this.dataset.deck);
-	
+	let deckValue = this.dataset.number;
 	deckImg = `${deckValue}.png`;
 	deck.src = "zdj/blat/" + deckImg;
 }
 const selectTruck = function () {
-	let truckValue = this.dataset.deck;
+	let truckValue = this.dataset.number;
 	truckImg = `${truckValue}.png`;
 	truck.src = "zdj/truck_kreator/" + truckImg;
 }
 const selectWheels = function () {
-	let wheelsValue = this.dataset.deck;
+	let wheelsValue = this.dataset.number;
 	wheelsImg = `${wheelsValue}.png`;
 	wheels.src = "zdj/kolka_kreator/" + wheelsImg;
 }
 const selectGrip = function () {
-	let gripValue = this.dataset.deck;
+	let gripValue = this.dataset.number;
 	gripImg = `${gripValue}.png`;
 	grip.src = "zdj/grip/" + gripImg;
 }
 
 deckBtn.forEach(button => {
-	const thies = this
-	button.addEventListener('click',selectDeck)
+	button.addEventListener('click', selectDeck)
 })
 truckBtn.forEach(button => {
 	button.addEventListener('click', selectTruck)
