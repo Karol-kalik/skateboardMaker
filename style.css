@@ -1,0 +1,61 @@
+body {
+	background-color: gray;
+	margin: 0;
+}
+
+button {
+	display: block;
+}
+
+.deck {
+	z-index: 1;
+}
+
+.truck {
+	z-index: 2;
+}
+
+.wheels {
+	z-index: 3;
+}
+
+.main {
+	position: absolute;
+	width: 80vw;
+	left: calc(50% - 1000px);
+	right: calc(50% - 1000px);
+	top: 100px;
+	display: flex;
+
+}
+
+.creator {
+	width: 50%;
+}
+
+.src {
+	position: absolute;
+}
+
+.select {
+	background-color: #a2a2a2;
+	width: 50%;
+	min-height: 70vh;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+.selectItem{
+
+	display: flex;
+	justify-content: center;
+	/* flex-grow: 1; */
+	justify-content: space-evenly;
+}
+.deskSelect{
+	width: 20%;
+}
+
+.grip {
+	margin-left: 20%;
+}
