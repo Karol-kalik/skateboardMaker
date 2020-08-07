@@ -53,7 +53,9 @@ button {
 	justify-content: space-evenly;
 }
 .deskSelect{
+
 	width: 20%;
+		transform: rotateZ(50deg);
 }
 .truckSelect{
 	width: 20%;
@@ -63,8 +65,18 @@ button {
 }
 .gripSelect{
 	width: 20%;
+	transform: rotateZ(50deg);
 }
 
 .grip {
 	margin-left: 20%;
+}
+
+.selectProduct{
+	cursor: pointer;
+	padding: 20px;
+}
+.selectProduct:hover{
+	background:lightblue;
+	border-radius: 20px;
 }
