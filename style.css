@@ -55,6 +55,15 @@ button {
 .deskSelect{
 	width: 20%;
 }
+.truckSelect{
+	width: 20%;
+}
+.wheelsSelect{
+	width: 20%;
+}
+.gripSelect{
+	width: 20%;
+}
 
 .grip {
 	margin-left: 20%;
