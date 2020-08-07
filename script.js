@@ -8,19 +8,19 @@ let wheelsImg = "";
 let gripImg = "";
 let decksArr = {
 	name: ["deck1" , "deck2", "deck3"],
-	img: ["zdj/blat/1.png" , "zdj/blat/2.png", "zdj/blat/3.png"]
+	img: ["src/deck/1.png", "src/deck/2.png", "src/deck/3.png"]
 }
 let trucksArr = {
 	name: ["truck1", "truck2", "truck3"],
-	img: ["zdj/truck/1.png", "zdj/truck/2.png", "zdj/truck/3.png"]
+	img: ["src/truck/1.png", "src/truck/2.png", "src/truck/3.png"]
 }
 let wheelsArr = {
 	name: ["wheels1", "wheels2", "wheels3"],
-	img: ["zdj/kolka/1.png", "zdj/kolka/2.png", "zdj/kolka/3.png"]
+	img: ["src/wheels/1.png", "src/wheels/2.png", "src/wheels/3.png"]
 }
 let gripArr = {
 	name: ["grip1", "grip2", "grip3"],
-	img: ["zdj/grip/1.png", "zdj/grip/2.png", "zdj/grip/3.png"]
+	img: ["src/grip/1.png", "src/grip/2.png", "src/grip/3.png"]
 }
 
 const createDeckElement = (arr, select, nameSelect) => {
@@ -48,22 +48,22 @@ const gripsBtn = [...document.querySelectorAll('.selectGrip .gripSelect')];
 const selectDeck = function () {
 	let deckValue = this.dataset.number;
 	deckImg = `${deckValue}.png`;
-	deck.src = "zdj/blat/" + deckImg;
+	deck.src = "src/deck/" + deckImg;
 }
 const selectTruck = function () {
 	let truckValue = this.dataset.number;
 	truckImg = `${truckValue}.png`;
-	truck.src = "zdj/truck_kreator/" + truckImg;
+	truck.src = "src/truck_creator/" + truckImg;
 }
 const selectWheels = function () {
 	let wheelsValue = this.dataset.number;
 	wheelsImg = `${wheelsValue}.png`;
-	wheels.src = "zdj/kolka_kreator/" + wheelsImg;
+	wheels.src = "src/wheels_creator/" + wheelsImg;
 }
 const selectGrip = function () {
 	let gripValue = this.dataset.number;
 	gripImg = `${gripValue}.png`;
-	grip.src = "zdj/grip/" + gripImg;
+	grip.src = "src/grip/" + gripImg;
 }
 
 deckBtn.forEach(button => {
